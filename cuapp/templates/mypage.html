@@ -1,0 +1,14 @@
+<h1>마이 페이지</h1>
+
+<hr>
+<button><a href="{% url 'login' %}">로그인창으로 돌아가기</a></button>
+<button><a href="{% url 'update_password' %}">비밀번호 수정하기</a></button>
+<button><a href="{% url 'update_user' %}">회원정보 수정하기</a></button>
+<hr>
+
+<p>이름 : {{user.username}}</p>
+<p>나이 : {{user.age}}</p>
+<p>프로필 사진:<img src="{{image.url}}"><br></p>
+
+</body>
+</html>

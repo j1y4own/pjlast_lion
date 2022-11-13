@@ -1,0 +1,174 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content :center;
+    align-items: center;
+    height: 100vh;
+  }
+
+.modal-background {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.15);
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+
+.modal-editpage{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    width: 30rem;
+    height: 15rem;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+}
+
+.btn-close{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.btn-submit{
+    background-color:lightblue;
+    color: black;
+    font-weight:600;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1rem;
+    padding: 0.7rem;
+    display: block;
+    margin: 1em auto;
+    box-shadow: 1px 1px 3px 1px rgb(119, 160, 173);
+}
+
+.btn-submit.animation{
+    box-shadow: 1px 1px 3px 1px rgb(119, 160, 173) inset;
+
+}
+
+.modal-background.active{
+    display: block;
+}
+
+input:focus,
+textarea:focus{
+    background-color: #F9FFFF;
+}
+
+input[type=text]
+{
+    width: 15rem;
+    height: 1.5rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+textarea{
+    width: 15rem;
+    height: 5rem;
+    margin-top: 1rem;
+}
+  
+  .heart{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background: #c9c9c9;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border-radius: 0 0 0 10px;
+    transform: rotate(-45deg);
+    cursor: pointer;
+  }
+
+  
+  .heart.fill-color{
+    background-color: #ff2727;
+  }
+  
+   
+  .heart::before{
+    position: absolute;
+    content: "";
+    top: -50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    border-radius: 50%;
+  }
+  
+  .heart::after{
+    position: absolute;
+    content: "";
+    right: -50%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    border-radius: 50%;
+  }
+  
+  .animation-heart{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    background:#ff2727;
+    transform: rotate(-45deg);
+    border-radius: 0 0 0 10px;
+    cursor: pointer;
+    visibility: hidden;
+  }
+  
+  .animation-heart.animation{
+    animation: popup .8s linear;
+    visibility: visible;
+  }
+  
+  .animation-heart::after{
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: -50%;
+    right: 0;
+    background: inherit;
+    border-radius: 50%;
+  }
+  
+  .animation-heart::before{
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: -50%;
+    background: inherit;
+    border-radius: 50%;
+  }
+
+  .like{
+    transform: rotate(45deg);
+    z-index: 99;
+  }
+  
+  @keyframes popup {
+    100% {
+      transform: scale(1.5) rotate(-45deg); 
+      opacity: 0;
+    }
+  }

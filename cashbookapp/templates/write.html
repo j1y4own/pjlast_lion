@@ -1,0 +1,24 @@
+{% if request.user.is_authenticated %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나만의 가계부 만들기</title>
+</head>
+<body>
+    <h2>write</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <br>
+        <button type="submit">작성</button>
+        {% else %}
+        <a href="{% url 'login' %}">[새 글을 작성하려면 로그인하세요.]</a>
+    </form>
+</body>
+</html>
+{% endif %}

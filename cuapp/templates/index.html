@@ -1,0 +1,9 @@
+{% if user.is_active %}
+    <p>유저명: {{ user.username }}</p>
+    <p>유저 나이: {{ user.age }}</p>
+    <p>유저 주소: {{ user.address }}</p>
+    <a href="{% url 'logout' %}">로그아웃</a>
+{% else %}
+    <a href="{% url 'login' %}">로그인</a>
+    <a href="{% url 'signup' %}">회원 가입</a>
+{% endif %}

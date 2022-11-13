@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나만의 가계부 만들기</title>
+</head>
+<body>
+    <h2>Read</h2>
+    <br>
+    <a href="{% url 'hashtag' %}">hashtag 만들기</a>
+    <br>
+    <form method="GET">
+        <select name="sort" id="sort">
+            <option value="date" id="date">최신순</option>
+            <option value="like_count" id="like_count">좋아요순</option>
+        </select>
+        <button type="submit">정렬</button>
+
+        {% for cashbooks in cashbooks.all %}
+        <h4>제목 :<a href="{% url 'detail' cashbooks.id %}">{{cashbooks.title}}</a></h4>
+        <p>작성일: {{cashbooks.created_at}}</p>
+        {% if user in cashbooks.like.all %}
+        {% else %}
+        <div class="heart"><p class="like">좋아요:{{ cashbooks.like_count }}개</p></div>
+        {% endif %}
+        {% endfor %}
+    
+</body>
+</html>
