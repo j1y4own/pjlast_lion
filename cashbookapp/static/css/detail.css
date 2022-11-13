@@ -3,11 +3,11 @@
 }
 
 body{
-    display: flex;
-    justify-content :center;
-    align-items: center;
-    height: 100vh;
-  }
+  display: flex;
+  justify-content :center;
+  align-items: center;
+  min-height: 100vh;
+}
 
 .modal-background {
     position: fixed;
