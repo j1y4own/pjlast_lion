@@ -11,6 +11,9 @@
     {% endblock css %}
 </head>
 <body>
+    <div id="loader">
+        <img style="margin-left: 50%; transform: translate(-50%);"src="{% static 'img/ompang.gif' %}">
+    </div>
     <h2>Read</h2>
     <label>
         <input type="checkbox">
@@ -37,5 +40,17 @@
         {% endfor %}
     </form>
     </div>
+    <script>
+        function hide() {
+            document.getElementById("loader").style.display="none";
+        }
+        self.setTimeout("hide()", 3000);
+        // setTimeout(function(){
+        //     fadeOut('.loader');
+        // }, 3000);
+        // setTimeout(function(){
+        //     $('.loader').delay('3000').fadeOut();
+        // });
+    </script>
 </body>
 </html>
