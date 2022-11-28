@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'KOTRALEAP';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/KOTRALEAP.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'MICEGothic Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  body{
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+
+ul{
+    font-family: 'KOTRALEAP';
+    font-style:italic;
+    font-size: 25px;
+    color:blueviolet;
+}
+
+.indec{
+    font-family: 'KOTRALEAP';
+    width: 200px;
+    height: 100px;
+    background-color:white;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 10%;
+    padding: 20px;
+    border: 2px solid rgb(58, 24, 6);
+    color: white;
+}
+
+a{
+    text-decoration: none;
+}

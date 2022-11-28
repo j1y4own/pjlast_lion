@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+  {% block css %}
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -14,29 +15,28 @@
         }
     </style>
 
-        
+{% endblock css %}
 </head>
 <body>
     <br>
-    <div class="digital">
-      <div id="date" class="date"></div>
-      <div id="time" class="time"></div>
-  </div>
     <ul class="nav justify-content-end">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#" style="color:rgba(93, 25, 25, 0.7);">Main</a>
+          <a class="nav-link active" aria-current="page" href="{% url 'main' %}" style="color:rgba(93, 25, 25, 0.7);">Main</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'read' %}" style="color:rgba(93, 25, 25, 0.7);">Read</a>
+          <a class="nav-link" href="{% url 'read' %}" style="color:rgba(93, 25, 25, 0.7);">Post</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" style="color:rgba(93, 25, 25, 0.7);">Link</a>
+          <a class="nav-link" href="{% url 'write' %}" style="color:rgba(93, 25, 25, 0.7);">Write</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" style="color:rgba(93, 25, 25, 0.7);">Login</a>
+          <a class="nav-link" href="{% url 'index' %}" style="color:rgba(93, 25, 25, 0.7);">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'mypage' %}" style="color:rgba(93, 25, 25, 0.7);">Mypage</a>
         </li>
       </ul>
-    <hr style="border: 7px solid #45312b">
+    <hr style="border: 5px double orangered;">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -64,90 +64,25 @@
         </button>
     </div>
     <br>
-    <div class="box">
-        <br>
-        <hr style="border: 7px solid rgb(114, 113, 113); width:70%;">
-        <hr>
-        <div id="columbus" class="columbus">
-            <div class="columintro">
-                <h3>Columbus Lounge</h3>
-                <img class="colum_img" src="{% static 'img/columbus.jpeg' %}">
-                <p>21395 Incheon, Korea 부평구 부평동 155-32 콜롬버스 라운지<br>
-                    No Holiday 5pm ~ 6am<br>
-                    Signature Cocktail Food Wiskey Rum Wine</p>
-                <div class="info">
-                <p>인천 부평에 위치한 해적선 컨셉을 가진 이국적인 라운지 바입니다.<br>콜럼버스 라운지의 의미는 술을 즐기는 해적들의 친근한 이미지와 칵테일과 펍이라는 새로운 문화를 개척하자는 뜻으로 지어졌으며 콜럼버스의 첫 항해를 시작한 오너인 저는 배를 타고 여러 항구를 누비던 항해사였습니다. <br>항해사로 승선중일때는 해외와 국내 항구 주변에 위치한 바와 펍이 길었던 선상 생활에서는 유일한 안식처였고 그 매력에 빠져 제가 느꼈던 펍이라는 편한 분위기와 바텐더에 대한 동경 그리고 칵테일이라는 예술적인 술을 저만의 해석과 컨셉으로 2019년1월 콜럼버스 라운지를 처음 시작하였습니다.<br>어쩌면 배에서의 생활보다도 훨씬 힘든 항해였고 인천에서 Pub 문화가 자리잡기에는 거친 파도가 많았던 것 같습니다. <br>하지만 지금은 어떤 승객분들이 저희 콜럼버스에 승선하더라도 정말 자신있게 인천에 이런 멋진 곳이 있었어 라는 말이 나오실거라 생각합니다. <br>혼자서도 또는 내가 아끼는 소중한 사람과 함께 오시더라도 고민하지 마세요. 콜럼버스에 승선하는 순간 우리는 친구이고 긴 널빤지를 뜻하는 Bar,상냥하다는 Tender. 상냥하고 멋진 바텐더들이 여러분을 환영할겁니다.<br>Welcome to Columbus!<br>
-                    <br>
-                    MENU LIST<br>
-                    <br>
-                    콜럼버스 라운지에는 전문 쉐프와 바텐더들이 어디서도 맛 보지 못할 저희만의 시그니처 레시피로 손님들에게 최고의 맛과 행복을 선사합니다.<br>
-                    <br>
-                    Columbus Kitchen<br>
-                    <br>
-                    - Signature Pasta 시그니처 파스타<br>
-                    - Signatute Stake 시그니처 스테이크<br>
-                    - Columbus special Menu 스페셜 메뉴<br>
-                    - Salad 샐러드 -Fried 튀김류<br>
-                    - Side menu 사이드<br>
-                    <br>
-                    Bar<br>
-                    <br>
-                    - Signature Cocktail 시그니처 칵테일<br>
-                    - Casual Cocktail 캐주얼 칵테일<br>
-                    - Tiki Cocktail 티키 칵테일<br>
-                    - Classic Cocktail 클래식 칵테일<br>
-                    - Whisky 위스키<br>
-                    - Liquer 리큐어<br>
-                    - Vodka 보드카<br>
-                    - Gin 진<br>
-                    - Rum 럼<br>
-                    - Tequilla 데낄라<br>
-                    - Wine (red,white,sparkling) 와인<br>
-                    - Champagne 샴페인<br>
-                    - Beer 맥주<br>
-                    <br>
-                    콜럼버스 라운지에서는 아주 다양한 술을 제공하고 있으며 승객의 취향과 기분에 맞춰 세상에서 하나뿐인 칵테일을 만들어 드립니다.<br>
-                    <br>
-                    어떤 상상을 하시더라도 후회없는 발 걸음이 되실 수 있도록 최선을 다 해서 행복을 팔겠습니다.<br>
-                    <br>
-                    - Leave on a Columbus Lounge -<br>
-                    <br>
-                    - 망설임 No 콜럼버스 Let's Go -<br>
-                    </p>
-                </div>
-                <p>☎️Tel: 0507-1315-8925</p>
-            </div>
-        </div>
-        <div id="arslonga" class="arslonga">
-            <div class="arslongaintro">
-                <h3>ArsLonga</h3>
-                <img class="ars_img" src="{% static 'img/arslonga.jpeg' %}">
-                <p>아스론가 arslonga<br>
-                    Coffe & Casual Wine bar<br>
-                    Cafe | Mon - Sun 11:00 - 17:30<br>
-                    Wine | Mon - Sun 17:30 - 24:00
-                </p>
-                <p>☎️Tel: 0507-1465-0095</p>
-            </div>
-        </div>
-        <div id="cestsibon"class="cestsibon">
-            <div class="cestcibonintro">
-                <h3>euljiro Cestsibon</h3>
-                <img class="cest_img" src="{% static 'img/cestsibon.jpeg' %}">
-                <p>을지로와인바 "을지로쎄시봉"<br>
-                    서울시 중구 초동 40-1 2층<br>`
-                    일-목 17:00 - 24:00<br>
-                    금-토 17:00 - 01:00
-                </p>
-                <div class="info">
-                    좋은 사람들과 함꼐 보내는 하루, 와인과 라이브 음악이 있는 을지로쎄시봉으로 놀러오세요.
-                </div>
-                <p>☎️Tel: 0507-1324-9430</p>
-            </div>
-        </div>
+    <div class="pjinfo">
+      <h2>♦️LOUNGE♦️</h2>
+      <hr style="border: 1px solid white;">
+      <p></p>
     </div>
+    <div class="digital">
+      <div id="date" class="date"></div>
+      <div id="time" class="time"></div>
+    </div>
+    <div class="pageintro">
+      <p></p>
+    </div>
+    <footer>
+      <div class="footercontent">
+        <p>성공회대학교 멋쟁이사자처럼<br>Copyright&copy; Lounge 2022 <br>10기 전지윤 전천우</p>
+        <p style="padding-left: 5%;"><span style="font-weight:800;">CONTACT</span> <br> missji1004@gmail.com</p>
+      </div>
+    </footer>
     <script src="{% static 'js/main.js' %}"></script>
 </body>
-<!-- <footer>Copyright&copy; 성공회대학교 멋쟁이사자처럼 10기 아기사자 전지윤</footer> -->
 
 </html>

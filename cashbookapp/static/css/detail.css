@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'KOTRALEAP';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/KOTRALEAP.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MICEGothic Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
 *{
     box-sizing: border-box;
 }
@@ -7,6 +21,34 @@ body{
   justify-content :center;
   align-items: center;
   min-height: 100vh;
+}
+
+h1{
+  color:rgb(118, 15, 49);
+}
+
+h1, .mainintro, .introcontent{
+  font-family: 'KOTRALEAP';
+}
+
+.merong{
+  float: right;
+  line-height: 100%;
+  transform: translate(-30%);
+  color: white;
+  
+}
+
+.merong h1{
+  font-size: 4rem;
+}
+
+.merong h1,h2{
+  color: rgb(118, 15, 49);
+}
+
+.introcon{
+  font-family: 'KOTRALEAP';
 }
 
 .modal-background {

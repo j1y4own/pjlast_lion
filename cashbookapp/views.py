@@ -35,7 +35,7 @@ def write(request, cashbook=None):
                     hashtag.hashtag_content = Hash
                     cashbook_ = Cashbook.objects.get(id=cashbook.id)
                     cashbook_.tagging.add(hashtag)
-            return redirect('read', form.id)
+            return redirect('read')
         else:
             return render(request, 'read.html', context)
     else:

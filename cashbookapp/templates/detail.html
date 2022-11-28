@@ -8,22 +8,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel ="stylesheet" href="{% static 'css/detail.css' %}">
-    <title>나만의 가계부 만들기</title>
+    <title>{{cashbooks.title}}</title>
+    <style>
+        body{
+            background-color:rgb(24, 24, 24);
+        }
+    </style>
     {% endblock css %}
 </head>
 
 <body>
-    <div class="col-lg-10">
-        <h2>Detail</h2>
+    <div class="col-lg-10" style="width: 700px; margin-bottom:10%; color: white;">
+        <h1>♦️Introduce♦️</h1>
         <hr><br><br>
-        <h3>제목: {{cashbooks.title}}</h3>
-        <p>작성일: {{cashbooks.created_at}}</p>
-        <p>지출내역: {{cashbooks.content}}</p>
-        <p>이메일:{{cashbooks.email}}</p>
-        <p>url:{{cashbooks.url}}</p>
-        {% if cashbooks.image %}
-        <img src="{{ cashbooks.image.url }}" width="250" height="250" alt='image'></img>
-        {% endif %}
+        <div class="mainintro">
+            {% if cashbooks.image %}
+            <img src="{{ cashbooks.image.url }}" width="400" height="400" alt='image'></img>
+            {% else %}
+            <img src="{% static 'img/cock1.png' %}" width="400" height="400" alt='image'></img>
+            {% endif %}
+            <div class="merong">
+            <h1>{{cashbooks.title}}</h1>
+            <br>
+            <p><h2>Date</h2> {{cashbooks.created_at}}</p>
+            <p><h2>☎️</h2>&nbsp;{{cashbooks.email}}</p>
+            <p><h2>Site</h2><br>&nbsp;{{cashbooks.url}}</p>
+            </div>
+        </div>
+        <p><h2 class="introcon">Intro</h2> {{cashbooks.content}}</p>
         <br>
         <button id="modal-active">댓글수정</button>
         <div id="modal-notice" class="modal-background">
@@ -35,7 +47,7 @@
                         {{form.as_table}}
                     </table>
                     {% if cashbooks.image %}
-                        <img src="{{ cashbooks.image.url }}" width="250" height="250" alt ='image'></img>
+                        <!-- <img src="{{ cashbooks.image.url }}" width="250" height="250" alt ='image'></img> -->
                     {% endif %}
                     <br>
                     <button type="submit" class="btn-submit">작성</button>

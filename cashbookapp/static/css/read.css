@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'KOTRALEAP';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/KOTRALEAP.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MICEGothic Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
 #loader{
   position: fixed;
   width: 100%;
@@ -5,11 +19,112 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(71, 71, 71, 0.393);
+  background-color: rgba(9, 5, 5, 0.914);
+  z-index: 999;
+}
+
+#wrap{
+  width: 1300px;
+  margin: 0 auto;
+}
+
+h1{
+  font-family: 'KOTRALEAP';
+}
+
+header{
+  height: 60px;
+  /* background-color:blanchedalmond; */
+}
+
+aside{
+  width: 700px;
+  float: left;
+  padding: 10px;
+}
+
+section{
+  padding: 10px;
+  width: 600px;
+  float: right;
+  display: inline;
 }
 
 .box{
-    z-index:99;
+  align-items: center;
+  margin: 0 auto;
+  /* position: absolute;
+  left: 50%;
+  transform:translate(-50%, 0%); */
+}
+
+.columbus, .arslonga, .cestsibon{
+  width: 40vw;
+  height: 40vh;
+  background-color:rgb(38, 4, 16);
+  margin: 30px;
+  padding: 10px;
+  font-size: 20px;
+  overflow: scroll;
+  font-family: 'KOTRALEAP';
+  color: white;
+}
+
+.info{
+  font-size: 15px;
+  font-family: 'MICEGothic Bold';
+}
+
+h3{
+  position: sticky;
+  text-align: center;
+  font-family: 'KOTRALEAP';
+  color: white;
+  text-decoration: underline;
+}
+
+.colum_img{
+  width: 300px;
+  height: 300px;
+}
+
+/* .arslonga{
+  width: 60vw;
+  height: 30vh;
+  background-color:#141313;
+  margin: 30px;
+  padding: 10px;
+  font-size: 20px;
+  overflow: scroll;
+  font-family: 'KOTRALEAP';
+} */
+
+.ars_img{
+  width: 300px;
+  height: 300px;
+}
+
+/* .cestsibon{
+  width: 60vw;
+  height: 30vh;
+  background-color:#141313;
+  margin: 30px;
+  padding: 10px;
+  font-size: 20px;
+  overflow: scroll;
+  font-family: 'KOTRALEAP';
+} */
+
+.cest_img {
+  width: 300px;
+  height: 300px;
+}
+
+ul{
+  font-family: 'KOTRALEAP';
+  font-style:italic;
+  font-size: 25px;
+  color:blueviolet;
 }
 
 input[type="checkbox"]{
@@ -66,4 +181,27 @@ input[type="checkbox"]:checked ~ .check:before{
 
 input[type="checkbox"]:checked~ .check:after{
   transform: translateX(0px);
+}
+
+.barpost{
+  width: 200px;
+  height: 200px;
+  color:azure;
+  font-family: 'KOTRALEAP';
+  padding: 5px;
+  border: 5px solid rgba(93, 25, 25, 0.7);
+  border-radius: 10%;
+  overflow: scroll;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+a {
+  text-decoration-line: none;
+  color: azure;
+}
+
+a:hover{
+  color: blueviolet;
 }
