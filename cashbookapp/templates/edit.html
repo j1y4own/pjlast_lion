@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나만의 가계부 만들기</title>
+</head>
+<body>
+    <h2>Edit</h2>
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        {% if cashbooks.image %}
+            <img src="{{ cashbooks.image.url }}" width="250" height="250" alt ='image'></img>
+        {% endif %}
+        <br>
+        <button type="submit">작성</button>
+    </form>
+</body>
+</html>

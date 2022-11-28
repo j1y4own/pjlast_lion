@@ -1,0 +1,9 @@
+<h1>회원정보 수정</h1>
+
+<form method="POST" action="{% url 'update_user' %}" enctype="multipart/form-data">
+    {% csrf_token %} 
+    <p>이름 : {{user.username}}</p>
+    <img src="{{user_image.url}}">
+    {{form.as_p}}
+    <button type="submit">수정하기</button>
+</form>

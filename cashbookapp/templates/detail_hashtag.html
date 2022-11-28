@@ -1,0 +1,12 @@
+<h3>#{{ hashtag }}</h3>
+<div class="posts">
+    {% if hashtag_posts %}
+        {% for hashtag_posts in hashtag_posts %}
+            <h3><a href="{% url 'detail' hashtag_posts.id %}">제목 : {{ hashtag_posts.title }}</a></h3>
+            <br>
+            <hr>
+        {% endfor %}
+    {% else %}
+        <p>게시물이 없습니다.</p>
+    {% endif %}
+</div>`
