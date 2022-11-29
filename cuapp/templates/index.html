@@ -27,12 +27,15 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'write' %}" style="color:rgba(93, 25, 25, 0.7);">Write</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'login' %}" style="color:rgba(93, 25, 25, 0.7);">Login</a>
-        </li>
+        {% if request.user.is_authenticated %}
         <li class="nav-item">
           <a class="nav-link" href="{% url 'mypage' %}" style="color:rgba(93, 25, 25, 0.7);">Mypage</a>
         </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}" style="color:rgba(93, 25, 25, 0.7);">Login</a>
+        </li>
+        {% endif %}
       </ul>
       <hr style="border: 7px solid #45312b">
     <div class="indec">
@@ -47,3 +50,4 @@
         {% endif %}
     </div>
 </body>
+</html>
